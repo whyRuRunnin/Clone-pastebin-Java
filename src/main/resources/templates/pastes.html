@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <title>Title</title>
+</head>
+<body>
+<table class="table table-striped table-bordered">
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+  <tr th:if="${#lists.isEmpty(pastes)}">
+    <td colspan="5">No Pastes found. Add some!</td>
+  </tr>
+  <tr th:each="paste: ${pastes}">
+    <td th:text="${paste.title}"></td>
+    <td th:text="${paste.text}"></td>
+  </tr>
+  </tr>
+</table>
+<a href="/create">Paste another text?</a>
+</form>
+</body>
+</html>
